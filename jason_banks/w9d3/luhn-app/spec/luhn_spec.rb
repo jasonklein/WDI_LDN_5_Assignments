@@ -1,3 +1,17 @@
 require_relative 'spec_helper'
-require_relative '../bank'
+require_relative '../luhn'
 
+describe Luhn do
+
+
+
+
+
+
+
+
+
+
+
+
+end
