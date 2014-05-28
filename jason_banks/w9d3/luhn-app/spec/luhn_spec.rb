@@ -11,12 +11,19 @@ describe Luhn do
     end
   end
 
+  describe '#set_amount_of_cards' do
+    it 'sets the amount of cards to be input' do
+      luhn.set_amount_of_cards(2)
+      expect(luhn.amount).to eq 2
 
+      luhn.set_amount_of_cards(10)
+      expect(luhn.amount).to eq 10
 
-
-
-
-
+      luhn.set_amount_of_cards(11)
+      expect(luhn.set_amount_of_cards(11)).to include "Amount must be a number equal to 10 or less."
+      expect(luhn.amount).to eq 0
+    end
+  end
 
 
 
