@@ -2,7 +2,7 @@ class Checkout
 
   attr_reader :basket, :items, :total_price
 
-  def initialize(basket=[])
+  def initialize(basket)
     @basket = basket
     @items = {SR1: 0, FR1: 0, CF1: 0}
     @total_price = 0.0
@@ -10,9 +10,9 @@ class Checkout
 
   def determine_basket_composition
     basket.each do |item|
-      if item.to_sym == :SR1
+      if item == :SR1.to_s
         items[:SR1] += 1
-      elsif item.to_sym == :FR1
+      elsif item == :FR1.to_s
         items[:FR1] += 1
       else
         items[:CF1] += 1
@@ -47,20 +47,6 @@ class Checkout
     price = amount * current_price
     price
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
